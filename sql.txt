@@ -1,0 +1,97 @@
+SQL> create table stud
+  2  (sid varchar(5),
+  3  sname varchar (20),
+  4  dob date,
+  5  doj date
+  6  );
+
+Table created.
+SQL> insert into stud values ('01','preeti',to_date('1995/10/21','yyyy/mm/dd'),to_date('2018/12/21','yyyy/mm/dd'));
+
+1 row created.
+
+SQL> insert into stud values ('02','b',to_date('1996/08/23','yyyy/mm/dd'),to_date('2018/03/21','yyyy/mm/dd'));
+
+1 row created.
+
+SQL> insert into stud values ('03','c',to_date('1994/09/25','yyyy/mm/dd'),to_date('2018/06/11','yyyy/mm/dd'));
+
+1 row created.
+SID   SNAME                DOB       DOJ
+----- -------------------- --------- ---------
+01    preeti               21-OCT-95 21-DEC-18
+02    b                    23-AUG-96 21-MAR-18
+03    c                    25-SEP-94 11-JUN-18
+
+       to find age
+
+SQL> select months_between (sysdate,dob)/12 from stud;
+
+MONTHS_BETWEEN(SYSDATE,DOB)/12
+------------------------------
+                    22.7382513
+                    21.8995416
+                    23.8108319
+
+current date
+
+SQL> select sysdate from dual;
+
+SYSDATE
+---------
+16-JUL-18
+
+SQL> select nvl(marks,0) from student;
+
+NVL(MARKS,0)
+------------
+           0
+           0
+          98
+         198
+           8
+
+SQL> SELECT * FROM student;
+
+ROLL                 NAME                 ADDRESS                   MARKS
+-------------------- -------------------- -------------------- ----------
+1                    tufail               chennai
+2                    amit                 chennai
+3                    tarun                chennai                      98
+4                    tarun                chennai                     198
+5                    tarun                chennai                       8
+
+SQL> select nvl2(marks,roll*3,roll*5) from student;
+
+NVL2(MARKS,ROLL*3,ROLL*5)
+-------------------------
+                        5
+                       10
+                        9
+                       12
+                       15
+coalesce 
+
+SQL> select roll,coalesce (marks,to_number(roll),10) from student;
+
+ROLL                 COALESCE(MARKS,TO_NUMBER(ROLL),10)
+-------------------- ----------------------------------
+1                                                     1
+2                                                     2
+3                                                    98
+4                                                   198
+5                                                     8
+
+SQL>  select address , sum(marks) from student group by address;
+
+ADDRESS              SUM(MARKS)
+-------------------- ----------
+chennai                     304
+
+CREATE TABLE LOAN_PAYMENT
+(LOANNO NUMBER(4) CONSTRAINT myloanconstrain PRIMARY KEY,
+LOAN_STATUS VARCHAR2(10) CONSTRAINT loanstatusCONS CHECK (LOAN_STATUS=UPPER(LOAN_STATUS)),
+LOAN_AMOUNT NUMBER(10) NOT NULL,
+UPDATE_DATE DATE DEFAULT SYSDATE,
+PRODUCT_KEY VARCHAR2(5)
+);

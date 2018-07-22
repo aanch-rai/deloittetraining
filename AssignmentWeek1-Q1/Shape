@@ -1,0 +1,103 @@
+//package shapesQ1;
+
+import java.util.Scanner;
+
+public abstract class Shape
+{
+	public abstract double area();
+	public abstract double volume();
+	Scanner sc = new Scanner(System.in);
+}
+
+class Rectangle extends Shape
+{
+	public double area ()
+	{
+		System.out.println("Enter l :");
+		double l = sc.nextDouble();
+		System.out.println("Enter w:");
+		double w = sc.nextDouble();
+		
+		System.out.println("The area of the rectangle is :");
+		return (l*w);
+	}
+	
+	public double volume()
+	{	
+		System.out.println("The volume of rectangle is :");
+		return -1;
+	}
+}
+
+class Triangle extends Shape
+{	public double area()
+	{
+		System.out.println("Enter base : ");
+		double b = sc.nextDouble();
+		System.out.println("Enter the height:");
+		double h = sc.nextDouble();
+		System.out.println("The area of the triangle is : ");
+		double ans = 0.5 *b*h;
+		return ans;
+		
+	}
+	
+	
+	public double volume()
+	{
+		System.out.println("The volume of triangle is:");
+		return -1;
+	}
+
+}
+
+class Sphere extends Shape
+{	
+	double p,r;
+	public double area()
+	{
+		System.out.println("Enter p :");
+		double p = sc.nextDouble();
+		System.out.println("Enter r : ");
+		double r = sc.nextDouble();
+		return (4*p*r*r);
+	}
+	
+	public double volume()
+	{	Scanner sc = new Scanner(System.in);
+		System.out.println("Enter p :");
+		double p = sc.nextDouble();
+		System.out.println("Enter r : ");
+		double r = sc.nextDouble();
+		this.p=p;
+		this.r=r;
+		System.out.println("The vol of the sphere is : ");
+		return ((4/3)*this.p*this.r*this.r*this.r);
+	}
+	
+}
+
+class Cube extends Shape
+{
+	public double area()
+	{
+		System.out.println("Enter l:");
+		double l = sc.nextDouble();
+		System.out.println("Enter w:");
+		double w = sc.nextDouble();
+		System.out.println("Enter h:");
+		double h = sc.nextDouble();
+		return ((2*l*w)+(2*l*h)+(2*w*h));
+	}
+	
+	public double volume()
+	{
+		System.out.println("Enter l:");
+		double l = sc.nextDouble();
+		System.out.println("Enter w:");
+		double w = sc.nextDouble();
+		System.out.println("Enter h:");
+		double h = sc.nextDouble();
+		return(l*w*h);	}
+}
+

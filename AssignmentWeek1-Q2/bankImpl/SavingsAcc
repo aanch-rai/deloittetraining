@@ -1,0 +1,43 @@
+package bankImpl;
+import bank.DepositAcc;
+import bank.CreditInterest;
+
+
+
+public class SavingsAcc implements DepositAcc , CreditInterest
+{
+	public void withdraw ()
+	{
+		System.out.println("Withdrawing in Savings Acc");
+	}
+	public void deposit ()
+	{
+		System.out.println("Depositing in Savings Acc");
+	}
+	public void getBalance()
+	{
+		System.out.println("Getting Balance in Savings Acc");
+	}
+	public void addMonthlyInt()
+	{
+		System.out.println("Adding Monthly interest in Savings Acc");
+	}
+	public void addHalfYrlyInt()
+	{
+		System.out.println("Adding half yearly interest in Savings Acc");
+	}
+	public void addAnnualInt()
+	{
+		System.out.println("Adding Annual Interest in Savings Acc");
+	}
+	public void creatAcc()
+	{
+		System.out.println("Creating Account of type Savings Acc");
+	}
+	
+	public void calcInt()
+	{
+		System.out.println("Calculating interest of type Savings Acc");
+	}
+
+}

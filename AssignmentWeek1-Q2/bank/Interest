@@ -1,0 +1,14 @@
+package bank;
+
+public interface Interest
+{
+	double interSavings = 0;
+	double interFixed = 0;
+	double interPersonalLoan =0;
+	double interHousingLoan=0 ; 
+	
+	public void calcInt();
+
+
+}
+

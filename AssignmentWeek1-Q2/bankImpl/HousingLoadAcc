@@ -1,0 +1,41 @@
+package bankImpl;
+import bank.LoanAcc;
+import bank.DebitInterest;
+
+public class HousingLoadAcc implements LoanAcc ,DebitInterest
+{
+	public void repayPrincipal()
+	{
+		System.out.println("The repay principal of Housing Loan Acc");
+	}
+	public void payInterest()
+	{
+		System.out.println("The pay Interest of Housing Loan Acc");
+	}
+	public void payPartialPrincipal()
+	{
+		System.out.println("The pay partial principal of Housing Loan Acc");
+	}
+	public void deductMonthlyInt()
+	{
+		System.out.println("The deduct Monthly Interest of Housing Loan Acc");
+	}
+	public void deductHalfYrlyInt()
+	{
+		System.out.println("The amt to deduct half yearly Interest of Housing Loan Acc");
+	}
+	public void deductAnnualInt()
+	{
+		System.out.println("The amt to deduct Annual Interest of Housing Loan Acc");
+	}
+	public void calcInt()
+	{
+		System.out.println("To calculate interest of Housing Loan Acc");
+	}
+	public void creatAcc()
+	{
+		System.out.println("Function to create account of type Housing Loan Acc");
+	}
+
+
+}

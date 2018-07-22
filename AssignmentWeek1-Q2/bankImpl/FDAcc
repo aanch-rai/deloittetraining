@@ -1,0 +1,41 @@
+package bankImpl;
+import bank.DepositAcc;
+import bank.CreditInterest;
+
+public class FDAcc implements DepositAcc,CreditInterest
+{
+	public void withdraw ()
+	{
+		System.out.println("Withdrawing in FD Acc");
+	}
+	public void deposit ()
+	{
+		System.out.println("Depositing in FD Acc");
+	}
+	public void getBalance()
+	{
+		System.out.println("Getting Balance in FD Acc");
+	}
+	public void addMonthlyInt()
+	{
+		System.out.println("Adding Monthly interest in FD Acc");
+	}
+	public void addHalfYrlyInt()
+	{
+		System.out.println("Adding half yearly interest in FD Acc");
+	}
+	public void addAnnualInt()
+	{
+		System.out.println("Adding Annual Interest in FD Acc");
+	}
+	public void creatAcc()
+	{
+		System.out.println("Creating Account of type FD Acc");
+	}
+	
+	public void calcInt()
+	{
+		System.out.println("Calculating interest of type FD Acc");
+	}
+
+}

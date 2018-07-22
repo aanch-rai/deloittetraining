@@ -1,0 +1,32 @@
+package bankImpl;
+
+
+public class MyAccount
+{	
+	public static void main(String[] args)
+	{	System.out.println("For savings Account : ");
+		SavingsAcc sa = new SavingsAcc();
+		sa.addAnnualInt();
+		sa.deposit();
+		
+		System.out.println("\nFor Fixed Deposit Account : ");
+		FDAcc f = new FDAcc();
+		f.calcInt();
+		f.creatAcc();
+		
+		System.out.println("\nFor Housing Loan Account : ");
+		HousingLoadAcc h = new HousingLoadAcc();
+		h.deductHalfYrlyInt();
+		h.calcInt();
+		
+		System.out.println("\nFor Personal Load Account : ");
+		PersonalLoadAcc p = new PersonalLoadAcc();
+		p.deductAnnualInt();
+		p.deductMonthlyInt();
+				
+		
+		
+	}
+	
+
+}

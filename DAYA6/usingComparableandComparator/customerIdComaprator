@@ -1,0 +1,14 @@
+import java.util.Comparator;
+
+public class customerIdComaprator implements Comparator<CustomerList> 
+{
+
+	@Override
+	public int compare(CustomerList o1, CustomerList o2) {
+		if(o1.getCustomerId()==o2.getCustomerId())
+			return -1;
+		else
+			return 1;
+	}
+
+}

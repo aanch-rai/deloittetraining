@@ -1,0 +1,17 @@
+import java.util.Comparator;
+
+public class CustomerAddressComparator implements Comparator<CustomerList> {
+
+	@Override
+	public int compare(CustomerList o1, CustomerList o2) {
+		if(o1.getCustomerAddress().compareTo(o2.getCustomerAddress())>0)// TODO Auto-generated method stub
+		{
+			return 1;  //if -1 it will be in descending order
+		}
+		else
+		{
+			return -1; //if 1 will be in descending order
+		}
+	}
+
+}

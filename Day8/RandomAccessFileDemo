@@ -1,0 +1,42 @@
+//Another way to make a file, write m read 
+//Parents of RandomAccessFile is DataInput/Output Stream
+//Here also the data is stored as it is..
+
+package Day8;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+
+public class RandomAccessFileDemo
+{
+	public static void main(String[] args) throws IOException
+	{
+	/*	File f = new File("a.txt");
+		RandomAccessFile ra = new RandomAccessFile(f,"rw");
+		ra.seek(ra.length()); //it will take the cursor to the specific point
+		System.out.println("File pointer is at (before writing: )"+ra.getFilePointer());
+		ra.writeUTF("Hi this is the new file");
+		System.out.println("File pointer just after Writing:"+ra.getFilePointer());
+		ra.seek(0);
+		System.out.println("File pointer after setting to 0:"+ra.getFilePointer());
+		String n = ra.readUTF();
+		System.out.println("Content is:"+ra.getFilePointer());
+		System.out.println(n);
+		ra.close();
+*/
+		
+		//There is an issue with utf as it reads as one full string
+		//So we use read which uses as individual bytes
+		
+		RandomAccessFile raf = new RandomAccessFile("data.txt", "r");
+		raf.seek(2);
+		byte[] bytes = new byte[12];//read takes only byte array
+		raf.read(bytes);
+		raf.close();
+		System.out.println(new String (bytes));
+		
+		
+	}
+
+}

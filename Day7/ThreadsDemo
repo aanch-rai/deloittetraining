@@ -1,0 +1,28 @@
+package day7;
+
+public class ThreadsDemo extends Thread
+{
+	Thread t1;
+	public ThreadsDemo()
+	{
+		t1 = new Thread(this);
+		t1.start();
+		System.out.println("In the constructor Threadsdemo, run by "+Thread.currentThread().getName()); //will get called first coz the constructor is always executed first
+	
+	}
+
+	public void run()
+	{
+		System.out.println("Run called :"+Thread.currentThread().getName()); //to see who is calling the thread
+		//This gets executed second because before the control shifted to Main thread, t1 sneeked in and finished its work of printing.
+	}
+	
+	
+	public static void main(String[] args)
+	{
+		ThreadsDemo d = new ThreadsDemo();
+		System.out.println("Printing in Main, run by : "+Thread.currentThread().getName());
+		
+	}
+
+}

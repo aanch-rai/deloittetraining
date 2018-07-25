@@ -1,0 +1,14 @@
+package day7;
+
+import java.io.File;
+
+public class testingfiles
+{
+	public static void main(String[] args)
+	{
+		File f = new File("C:\\Test\test.txt");
+		
+		
+	}
+
+}
